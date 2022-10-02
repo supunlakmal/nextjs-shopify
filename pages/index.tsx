@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Key, useEffect, useState } from 'react'
+import { checkout } from '../checkout'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -86,7 +87,7 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
   const {title ,description ,images} = node||{};
   const {edges} = images||{};
 
-console.log({images});
+
 
 return (
 <div key={a}>
@@ -105,14 +106,14 @@ return (<div key={i}> <img src={image.node.url}/></div>)
 <div> Product Name : {title} </div>
 <div> Product description : {description} </div>
 <button onClick={(() => {
-              // checkout({
-              //   lineItems: [
-              //     {
-              //       price: "price_1KmmMDAFPWVcpdFFZWnMTT7Z",
-              //       quantity: 1
-              //     }
-              //   ]
-              // })
+              checkout({
+                lineItems: [
+                  {
+                    price: "price_1LoP3HLEfSyaqL7bpXyLv4UG",
+                    quantity: 1
+                  }
+                ]
+              })
             })}>BUY!</button>
   
 </div>
