@@ -82,10 +82,10 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
 
 {productsList?.length && productsList.map((product)=>{
 
-  const {node} = product;
-  const {title ,description ,images} = node;
+  const {node} = product||{};
+  const {title ,description ,images} = node||{};
   const {edges
-} = images;
+} = images||{};
 
 console.log({images});
 
@@ -95,7 +95,7 @@ return (
 
 
 
-{edges.map((image)=>{
+{edges?.length && edges?.map((image)=>{
 
 
 return (<div> <img src={image.node.url}/></div>)
