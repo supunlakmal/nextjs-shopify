@@ -109,7 +109,7 @@ return (<div key={i}> <img src={image.node.url}/></div>)
               checkout({
                 lineItems: [
                   {
-                    price: "price_1LoPlQLEfSyaqL7brRltVv53",
+                    price: "price_1LoP3HLEfSyaqL7bpXyLv4UG",
                     quantity: 1
                   }
                 ]
