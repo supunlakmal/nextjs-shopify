@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { Key, useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -80,7 +80,7 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
           Welcome to My App Store
         </h1>
 
-{productsList?.length && productsList.map((product)=>{
+{productsList?.length && productsList.map((product,a)=>{
 
   const {node} = product||{};
   const {title ,description ,images} = node||{};
@@ -89,15 +89,15 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
 console.log({images});
 
 return (
+<div key={a}>
 <div>
-<div>
 
 
 
-{edges?.length && edges?.map((image:any)=>{
+{edges?.length && edges?.map((image: { node: { url: string | undefined } },i: Key | null | undefined)=>{
 
 
-return (<div> <img src={image.node.url}/></div>)
+return (<div key={i}> <img src={image.node.url}/></div>)
 })}
 
 
