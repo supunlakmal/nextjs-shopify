@@ -104,7 +104,16 @@ return (<div key={i}> <img src={image.node.url}/></div>)
 
 <div> Product Name : {title} </div>
 <div> Product description : {description} </div>
-
+<button onClick={(() => {
+              // checkout({
+              //   lineItems: [
+              //     {
+              //       price: "price_1KmmMDAFPWVcpdFFZWnMTT7Z",
+              //       quantity: 1
+              //     }
+              //   ]
+              // })
+            })}>BUY!</button>
   
 </div>
 </div>
