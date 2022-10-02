@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
 
-  const [productsList ,setProductsList]  = useState([])
+  const [productsList ,setProductsList]  = useState<any[]|null>(null)
 
 
 useEffect(()=>{
@@ -84,8 +84,7 @@ fetch(GRAPHQL_URL, GRAPHQL_BODY())
 
   const {node} = product||{};
   const {title ,description ,images} = node||{};
-  const {edges
-} = images||{};
+  const {edges} = images||{};
 
 console.log({images});
 
@@ -95,7 +94,7 @@ return (
 
 
 
-{edges?.length && edges?.map((image)=>{
+{edges?.length && edges?.map((image:any)=>{
 
 
 return (<div> <img src={image.node.url}/></div>)
